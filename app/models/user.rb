@@ -1,4 +1,5 @@
   class User < ActiveRecord::Base
+    has_many :microposts, dependent: :destroy
       validates :name, presence: true, length: { in: 9..30 }
       VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
       validates :email, presence: true, 
@@ -15,5 +16,8 @@
               user.email = email.downcase 
             user.remember_token = SecureRandom.urlsafe_base64
             end
+        def feed
+            Micropost.where("user_id = ?", id)
+        end
     end  
     
