@@ -1,8 +1,10 @@
 module SessionsHelper
 
-
+ 
 	  def signed_in?
+      logger.info "signed_in"
         !current_user.nil?
+
       end
 
       def sign_in(user)
@@ -12,11 +14,13 @@ module SessionsHelper
 
       # NEW SETTER
       def current_user=(user)
+        logger.info "user setter"
         @current_user = user
       end
 
       # NEW GETTER
       def current_user
+        logger.info "user getter"
         if @current_user.nil?
            @current_user = 
                User.find_by_remember_token(cookies[:remember_token]) 
@@ -25,6 +29,7 @@ module SessionsHelper
       end
 
       def sign_out
+        logger.info "signed_out"
         cookies.delete(:remember_token)
         self.current_user = nil
       end

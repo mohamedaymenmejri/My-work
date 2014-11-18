@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104105718) do
+ActiveRecord::Schema.define(version: 20141117223515) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20141104105718) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.string   "StudentID"
+    t.string   "course_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

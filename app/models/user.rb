@@ -2,6 +2,8 @@
     has_many :microposts, dependent: :destroy
       validates :name, presence: true, length: { in: 9..30 }
       VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+      validates :StudentID, presence: true, length: {in:6..10}
+      validates :course_id, presence: true, length: {in:3..60}
       validates :email, presence: true, 
                         format: { with: VALID_EMAIL_REGEX },
                         uniqueness: { case_sensitive: false }

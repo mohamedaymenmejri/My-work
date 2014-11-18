@@ -3,11 +3,12 @@ class UsersController < ApplicationController
   	@user = User.new
   end
   def show
+    logger.info "usershow"
         @user = User.find(params[:id])
         @microposts = @user.microposts
   end
   def create
-       secure_params = params.require(:user).permit(:name, :email, 
+       secure_params = params.require(:user).permit(:name, :StudentID, :course_id, :email, 
                                   :password, :password_confirmation)
         @user = User.new(secure_params)
         if @user.save
