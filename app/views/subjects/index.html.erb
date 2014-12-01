@@ -1,0 +1,24 @@
+<h1>Subject List</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Course</th>
+    <th>Description</th>
+    <th>CA Percent</th>
+    <th>Final Exam Percent</th>
+  </tr>
+
+<% @subjects.each do |subjects| %>
+  <tr>
+    <td><%= subjects.name %></td>
+    <td><%= subjects.course_id %></td>
+    <td><%= subjects.description %></td>
+    <td><%= subjects.ca_percent %></td>
+    <td><%= subjects.final_exam_percent %></td>
+ 
+  </tr>
+<% end %>
+</table>
+
+<br />

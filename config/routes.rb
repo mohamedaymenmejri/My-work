@@ -1,7 +1,9 @@
 Labex::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]  
+  resources :microposts, only: [:create, :destroy]
+  resources :feedbacks, only: [:new, :create, :index]
+  resources :subjects, only: [:new, :create, :index]  
  root to: 'static_pages#home'
  resources :sessions, only: [:new, :create, :destroy]
   match '/help',    to: 'static_pages#help' , via: 'get'
@@ -9,7 +11,11 @@ Labex::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/signup',  to: 'users#new', via: 'get'
   match '/signin',  to: 'sessions#new', via: 'get'         
-  match '/signout', to: 'sessions#destroy', via: :delete    
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/newfeedback',    to: 'feedbacks#new' , via: 'get'
+  match '/feedback',  to: 'feedbacks#index' , via: 'get'
+  match '/subjects',  to: 'subjects#index' , via: 'get'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

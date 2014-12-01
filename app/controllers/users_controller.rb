@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   	@user = User.new
   end
   def show
-    logger.info "usershow"
         @user = User.find(params[:id])
         @microposts = @user.microposts
   end

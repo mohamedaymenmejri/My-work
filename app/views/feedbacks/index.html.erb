@@ -1,0 +1,28 @@
+<h1>Listing feedbacks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Subject</th>
+    <th>Weaknesses</th>
+    <th>Strenghts</th>
+    <th>Recommendation</th>
+    <th>Rating</th>
+  </tr>
+
+<% @feedbacks.each do |feedbacks| %>
+  <tr>
+    <td><%= feedbacks.user.name %></td>
+    <td><%= feedbacks.subject.name %></td>
+    <td><%= feedbacks.weaknesses %></td>
+    <td><%= feedbacks.strenghts %></td>
+    <td><%= feedbacks.recommandation %></td>
+    <td><%= feedbacks.rating %></td>
+  </tr>
+        
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'create New feedback', new_feedback_path %>

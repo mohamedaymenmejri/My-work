@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117223515) do
+ActiveRecord::Schema.define(version: 20141128192035) do
+
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses_subjects", id: false, force: true do |t|
+    t.integer "course_id"
+    t.integer "subject_id"
+  end
+
+  create_table "feedbacks", force: true do |t|
+    t.integer  "user_id"
+    t.string   "subject_id"
+    t.string   "string"
+    t.string   "strenghts"
+    t.string   "weaknesses"
+    t.string   "recommandation"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -21,6 +44,17 @@ ActiveRecord::Schema.define(version: 20141117223515) do
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+
+  create_table "subjects", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "course_id"
+    t.string   "description"
+    t.integer  "ca_percent"
+    t.integer  "final_exam_percent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
