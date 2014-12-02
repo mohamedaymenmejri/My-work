@@ -45,6 +45,7 @@ gem 'sprockets', '2.11.0'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
-group :production do 
-	gem 'pg'
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
 end

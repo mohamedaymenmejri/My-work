@@ -11,6 +11,6 @@ class CreateFeedbacks < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :feedbacks, [:user_id, :subject_id :created_at]
+    add_index :feedbacks, [:user_id, :subject_id, :created_at]
   end
 end
