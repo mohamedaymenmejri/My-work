@@ -12,9 +12,11 @@
               <h3>Micropost Feed</h3>
               <%= render 'shared/feed' %>
             </div>
-      </div> 
+      </div>
+      <div class="center hero-unit"> 
       <%= link_to "Create Feedbach", newfeedback_path, class: "btn btn-large btn-primary" %>
       <%= link_to "See Feedbach", feedback_path, class: "btn btn-large btn-primary" %>
+      </div>
     <% else %>
     
       <div class="center hero-unit">
@@ -27,5 +29,7 @@
         <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
         <%= link_to "Sign in", signin_path, class: "btn btn-large btn-primary" %>
       </div>
+      <div class="center hero-unit">
       <%= link_to image_tag("WIT.JPG", alt: "WIT"), 'http://moodle.wit.ie/' %>
+      </div>
     <% end %> 
