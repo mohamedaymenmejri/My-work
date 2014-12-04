@@ -32,7 +32,7 @@ end
 # pasted in for lab
 group :development, :test do
 gem 'rspec-rails', '2.13.1'
-gem 'sqlite3'
+#gem 'sqlite3'
 end
 group :test do
 gem 'selenium-webdriver', '2.35.1'

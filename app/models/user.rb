@@ -1,6 +1,9 @@
   class User < ActiveRecord::Base
     has_many :microposts, dependent: :destroy
     has_many :feedbacks
+    has_many :grades
+      has_many :graded_subjects, :class_name => "Subject" ,
+               :through => :grades, :source => :Subject
       validates :name, presence: true, length: { in: 9..30 }
       VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
       validates :StudentID, presence: true, length: {in:6..10}

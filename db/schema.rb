@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202101647) do
+ActiveRecord::Schema.define(version: 20141204133003) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20141202101647) do
   end
 
   add_index "feedbacks", ["user_id", "subject_id", "created_at"], name: "index_feedbacks_on_user_id_and_subject_id_and_created_at"
+
+  create_table "grades", force: true do |t|
+    t.integer  "mark"
+    t.integer  "user_id"
+    t.integer  "subject_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "microposts", force: true do |t|
     t.string   "content"
